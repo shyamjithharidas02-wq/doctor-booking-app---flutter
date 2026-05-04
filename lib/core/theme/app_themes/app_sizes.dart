@@ -44,6 +44,7 @@ class AppSizes {
 
   static const double avatarSize = 48.0;
   static const double profileImageSize = 80.0;
+  static const double splashLogoSize = 130.0;
 
   // ================= APP BAR =================
 
@@ -56,6 +57,7 @@ class AppSizes {
   static const double spaceMd = 16.0;
   static const double spaceLg = 24.0;
   static const double spaceXl = 32.0;
+  static const double spaceXxl = 60.0;
 
   // ================= DIVIDER =================
 
