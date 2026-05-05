@@ -3,6 +3,7 @@ import 'package:doctor_booking_app/app/router/route_path.dart';
 import 'package:doctor_booking_app/features/home/presentation/pages/home_page.dart';
 import 'package:doctor_booking_app/features/login/presentation/pages/login_page.dart';
 import 'package:doctor_booking_app/features/onboard/presentation/pages/onboard_main_page.dart';
+import 'package:doctor_booking_app/features/signup/presentation/pages/signup_page.dart';
 import 'package:doctor_booking_app/features/splash/presentation/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -28,6 +29,12 @@ class RouteConfig {
         path: RoutePath.login,
         name: RouteNames.login,
         builder: (context, state) => const LoginPage(),
+      ),
+
+      GoRoute(
+        path: RoutePath.signup,
+        name: RouteNames.signup,
+        builder: (context, state) => const SignupPage(),
       ),
 
       GoRoute(
