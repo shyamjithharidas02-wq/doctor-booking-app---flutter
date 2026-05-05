@@ -14,4 +14,18 @@ class AppStrings {
       "Quickly access and book appointments with your preferred doctors anytime.";
   static const subtitle3 =
       "Explore nearby doctors and hospitals on the map and choose what works best for you.";
+
+  // Auth
+  static const welcomeTextLogin = "Let's get you Login!";
+  static const welcomeSubText = "Hi! Welcome back, you've been missed";
+  static const orSignInWith = "Or sign in with";
+  static const email = "Email";
+  static const emailPlaceholder = "example@gmail.com";
+  static const password = "Password";
+  static const passwordPlaceholder = "************";
+  static const forgotPassword = "Forgot Password?";
+
+  // Button Text
+  static const signIn = "Sign In";
+  static const signup = "Sign Up";
 }

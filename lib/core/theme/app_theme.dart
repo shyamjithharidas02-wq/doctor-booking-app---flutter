@@ -60,7 +60,7 @@ class AppTheme {
     // ================= INPUT FIELD =================
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: AppColors.lightGrey,
+      fillColor: AppColors.textFieldFill,
       contentPadding: const EdgeInsets.symmetric(
         horizontal: AppSizes.lg,
         vertical: AppSizes.md,
