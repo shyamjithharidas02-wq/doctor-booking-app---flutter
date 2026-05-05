@@ -18,7 +18,7 @@ class OnboardMainPage extends StatelessWidget {
         child: BlocListener<OnboardCubit, OnboardState>(
           listener: (context, state) {
             if (state.isCompleted) {
-              context.goNamed(RouteNames.home);
+              context.goNamed(RouteNames.login);
             }
           },
           child: const OnboardMainWidget(),
