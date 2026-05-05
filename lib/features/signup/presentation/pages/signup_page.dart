@@ -1,4 +1,7 @@
 import 'package:doctor_booking_app/app/router/route_names.dart';
+import 'package:doctor_booking_app/core/common_widgets/account_info_widget.dart';
+import 'package:doctor_booking_app/core/common_widgets/primary_button.dart';
+import 'package:doctor_booking_app/core/common_widgets/signin_divider_widget.dart';
 import 'package:doctor_booking_app/core/constants/app_strings.dart';
 import 'package:doctor_booking_app/core/constants/asset_path.dart';
 import 'package:doctor_booking_app/core/theme/app_themes/app_colors.dart';
@@ -8,25 +11,25 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/common_widgets/account_info_widget.dart';
-import '../../../../core/common_widgets/primary_button.dart';
-import '../../../../core/common_widgets/signin_divider_widget.dart';
-import '../widgets/social_icon_widget.dart';
+import '../../../login/presentation/widgets/social_icon_widget.dart';
+import '../widgets/signup_top_section.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignupPageState extends State<SignupPage> {
   bool isPasswordHidden = true;
+  final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
   @override
   void dispose() {
+    _nameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
@@ -39,47 +42,10 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           Container(color: AppColors.lightGreyShade),
 
-          Container(
-            height: MediaQuery.of(context).size.height / 2,
-            width: .infinity,
-            decoration: const BoxDecoration(
-              color: AppColors.primary,
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                opacity: 0.25,
-                image: AssetImage(AssetPath.authScreenImage),
-              ),
-            ),
-            child: Column(
-              children: [
-                const SizedBox(height: AppSizes.spaceXxl),
-                Image.asset(
-                  AssetPath.logoTransparent,
-                  color: AppColors.white,
-                  height: AppSizes.splashLogoSize + 20.0,
-                ),
-                const SizedBox(height: AppSizes.spaceXs),
-
-                Text(
-                  AppStrings.welcomeTextLogin,
-                  style: AppTextStyles.heading2.copyWith(
-                    color: AppColors.white,
-                  ),
-                ),
-                const SizedBox(height: AppSizes.spaceMd),
-
-                Text(
-                  AppStrings.welcomeSubText,
-                  style: AppTextStyles.bodySmall.copyWith(
-                    color: AppColors.white,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          const SignupTopSection(),
 
           Positioned(
-            top: 300,
+            top: 180,
             left: AppSizes.md,
             right: AppSizes.md,
 
@@ -122,6 +88,27 @@ class _LoginPageState extends State<LoginPage> {
 
                     const SignInDividerWidget(),
                     const SizedBox(height: AppSizes.spaceLg),
+
+                    Text(
+                      AppStrings.name,
+                      style: AppTextStyles.bodyMedium.copyWith(
+                        color: AppColors.black,
+                      ),
+                    ),
+                    const SizedBox(height: AppSizes.spaceXs),
+                    TextFormField(
+                      controller: _nameController,
+                      style: AppTextStyles.bodyMedium.copyWith(
+                        color: AppColors.black,
+                      ),
+                      decoration: InputDecoration(
+                        hintText: AppStrings.namePlaceholder,
+                        hintStyle: AppTextStyles.bodyMedium.copyWith(
+                          color: AppColors.grey,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: AppSizes.spaceMd),
 
                     Text(
                       AppStrings.email,
@@ -182,35 +169,47 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: AppSizes.spaceMd),
+                    const SizedBox(height: AppSizes.spaceSm),
 
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: Text(
-                        AppStrings.forgotPassword,
-                        style: AppTextStyles.bodyMedium.copyWith(
-                          color: AppColors.secondary,
-                          fontWeight: FontWeight.w500,
-                          decoration: TextDecoration.underline,
-                          decorationColor: AppColors.secondary,
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: true,
+                          onChanged: (value) {
+                            // TODO: Agree terms and conditions
+                          },
                         ),
-                      ),
-                    ),
-                    const SizedBox(height: AppSizes.spaceXl),
-
-                    PrimaryButton(
-                      onTap: () {
-                        // TODO: Function
-                      },
-                      buttonText: AppStrings.signIn,
+                        Text(
+                          AppStrings.agreeWith,
+                          style: AppTextStyles.bodySmall.copyWith(
+                            color: AppColors.black,
+                          ),
+                        ),
+                        const SizedBox(width: AppSizes.spaceXs),
+                        Text(
+                          AppStrings.termsConditions,
+                          style: AppTextStyles.bodySmall.copyWith(
+                            color: AppColors.black,
+                          ),
+                        ),
+                      ],
                     ),
                     const SizedBox(height: AppSizes.spaceLg),
 
-                    //
+                    PrimaryButton(
+                      onTap: () {
+                        // TODO: Sign in function
+                      },
+                      buttonText: AppStrings.signup,
+                    ),
+                    const SizedBox(height: AppSizes.spaceLg),
+
                     AccountInfoWidget(
-                      accountInfoText: AppStrings.dontHaveAnAccount,
-                      optionText: AppStrings.signup,
-                      onTap: () => context.push(RouteNames.signup),
+                      accountInfoText: AppStrings.alreadyHaveAnAccount,
+                      optionText: AppStrings.signIn,
+                      onTap: () {
+                        context.goNamed(RouteNames.login);
+                      },
                     ),
                   ],
                 ),
