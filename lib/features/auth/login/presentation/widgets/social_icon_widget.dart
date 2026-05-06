@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theme/app_themes/app_colors.dart';
-import '../../../../core/theme/app_themes/app_sizes.dart';
+import '../../../../../core/theme/app_themes/app_colors.dart';
+import '../../../../../core/theme/app_themes/app_sizes.dart';
 
 class SocialIconWidget extends StatelessWidget {
   final String icon;

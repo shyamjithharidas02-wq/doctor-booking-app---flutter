@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_themes/app_sizes.dart';
 
 class PrimaryButton extends StatelessWidget {
-  final Function()? onTap;
+  final VoidCallback onTap;
   final String buttonText;
 
   const PrimaryButton({
