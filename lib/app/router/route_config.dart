@@ -1,9 +1,14 @@
 import 'package:doctor_booking_app/app/router/route_names.dart';
 import 'package:doctor_booking_app/app/router/route_path.dart';
+import 'package:doctor_booking_app/features/auth/forgot_password/presentation/pages/new_password_page.dart';
+import 'package:doctor_booking_app/features/auth/forgot_password/presentation/pages/verify_code_page.dart';
 import 'package:doctor_booking_app/features/home/presentation/pages/home_page.dart';
-import 'package:doctor_booking_app/features/login/presentation/pages/login_page.dart';
+import 'package:doctor_booking_app/features/auth/login/presentation/pages/login_page.dart';
 import 'package:doctor_booking_app/features/onboard/presentation/pages/onboard_main_page.dart';
-import 'package:doctor_booking_app/features/signup/presentation/pages/signup_page.dart';
+import 'package:doctor_booking_app/features/auth/signup/presentation/pages/signup_page.dart';
+import 'package:doctor_booking_app/features/permissions/presentation/pages/location_permission_page.dart';
+import 'package:doctor_booking_app/features/permissions/presentation/pages/notification_permission_page.dart';
+import 'package:doctor_booking_app/features/profile/patient/presentation/pages/patient_create_profile_page.dart';
 import 'package:doctor_booking_app/features/splash/presentation/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -41,6 +46,36 @@ class RouteConfig {
         path: RoutePath.home,
         name: RouteNames.home,
         builder: (context, state) => const HomePage(),
+      ),
+
+      GoRoute(
+        path: RoutePath.verifyCode,
+        name: RouteNames.verifyCode,
+        builder: (context, state) => const VerifyCodePage(),
+      ),
+
+      GoRoute(
+        path: RoutePath.newPassword,
+        name: RouteNames.newPassword,
+        builder: (context, state) => const NewPasswordPage(),
+      ),
+
+      GoRoute(
+        path: RoutePath.patientProfileCreation,
+        name: RouteNames.patientProfileCreation,
+        builder: (context, state) => const PatientCreateProfilePage(),
+      ),
+
+      GoRoute(
+        path: RoutePath.notificationPermission,
+        name: RouteNames.notificationPermission,
+        builder: (context, state) => const NotificationPermissionPage(),
+      ),
+
+      GoRoute(
+        path: RoutePath.locationPermission,
+        name: RouteNames.locationPermission,
+        builder: (context, state) => const LocationPermissionPage(),
       ),
     ],
 

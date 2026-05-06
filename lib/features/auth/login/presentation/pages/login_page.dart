@@ -8,9 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/common_widgets/account_info_widget.dart';
-import '../../../../core/common_widgets/primary_button.dart';
-import '../../../../core/common_widgets/signin_divider_widget.dart';
+import '../../../../../core/common_widgets/account_info_widget.dart';
+import '../../../../../core/common_widgets/primary_button.dart';
+import '../../../../../core/common_widgets/signin_divider_widget.dart';
 import '../widgets/social_icon_widget.dart';
 
 class LoginPage extends StatefulWidget {
@@ -186,13 +186,16 @@ class _LoginPageState extends State<LoginPage> {
 
                     Align(
                       alignment: Alignment.centerRight,
-                      child: Text(
-                        AppStrings.forgotPassword,
-                        style: AppTextStyles.bodyMedium.copyWith(
-                          color: AppColors.secondary,
-                          fontWeight: FontWeight.w500,
-                          decoration: TextDecoration.underline,
-                          decorationColor: AppColors.secondary,
+                      child: GestureDetector(
+                        onTap: () => context.push(RouteNames.verifyCode),
+                        child: Text(
+                          AppStrings.forgotPassword,
+                          style: AppTextStyles.bodyMedium.copyWith(
+                            color: AppColors.secondary,
+                            fontWeight: FontWeight.w500,
+                            decoration: TextDecoration.underline,
+                            decorationColor: AppColors.secondary,
+                          ),
                         ),
                       ),
                     ),
@@ -200,7 +203,7 @@ class _LoginPageState extends State<LoginPage> {
 
                     PrimaryButton(
                       onTap: () {
-                        // TODO: Function
+                        context.push(RouteNames.patientProfileCreation);
                       },
                       buttonText: AppStrings.signIn,
                     ),

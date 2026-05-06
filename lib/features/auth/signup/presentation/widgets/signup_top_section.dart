@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constants/app_strings.dart';
-import '../../../../core/constants/asset_path.dart';
-import '../../../../core/theme/app_themes/app_colors.dart';
-import '../../../../core/theme/app_themes/app_sizes.dart';
-import '../../../../core/theme/app_themes/app_text_styles.dart';
+import '../../../../../core/constants/app_strings.dart';
+import '../../../../../core/constants/asset_path.dart';
+import '../../../../../core/theme/app_themes/app_colors.dart';
+import '../../../../../core/theme/app_themes/app_sizes.dart';
+import '../../../../../core/theme/app_themes/app_text_styles.dart';
 
 class SignupTopSection extends StatelessWidget {
   const SignupTopSection({super.key});

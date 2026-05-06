@@ -38,4 +38,27 @@ class AppStrings {
   // Button Text
   static const signIn = "Sign In";
   static const signup = "Sign Up";
+
+  // Verify Code & New Password
+  static const verifyCode = "Verify Code";
+  static const verifySubText = "Enter the verification code we sent to";
+  static const verifyEmailPlaceholder = "example@gmail.com";
+  static const receiveOtp = "Don't receive OTP?";
+  static const resendCode = "Resend Code";
+  static const verifyBtnText = "Verify";
+  static const confirmPassword = "Confirm Password";
+  static const newPassword = "New Password";
+  static const newPasswordSubText =
+      "Your new password must be different\nfrom previously used passwords.";
+  static const createNewPassword = "Create New Password";
+
+  // Profile Creation - Patient
+  static const profileNamePlaceholder = "Ex. John Doe";
+  static const phoneNumberLabel = "Phone Number";
+  static const phoneNumberPlaceholder = "Enter Phone Number";
+  static const genderLabel = "Gender";
+  static const createProfileTitle = "Complete Your Profile";
+  static const createProfleSubTitle =
+      "Don't worry, only you can see your personal\ndata. No one else will be able to see it.";
+  static const createProfile = "Create Profile";
 }
