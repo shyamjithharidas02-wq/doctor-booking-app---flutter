@@ -24,6 +24,7 @@ class AppSizes {
   static const double iconMd = 20.0;
   static const double iconLg = 24.0;
   static const double iconXl = 32.0;
+  static const double iconXxl = 40.0;
 
   // ================= BUTTON =================
 
@@ -43,6 +44,7 @@ class AppSizes {
   // ================= IMAGE =================
 
   static const double avatarSize = 48.0;
+  static const double circleSize = 60.0;
   static const double profileImageSize = 80.0;
   static const double splashLogoSize = 130.0;
 

@@ -4,6 +4,7 @@ import 'package:doctor_booking_app/features/auth/forgot_password/presentation/pa
 import 'package:doctor_booking_app/features/auth/forgot_password/presentation/pages/verify_code_page.dart';
 import 'package:doctor_booking_app/features/home/presentation/pages/home_page.dart';
 import 'package:doctor_booking_app/features/auth/login/presentation/pages/login_page.dart';
+import 'package:doctor_booking_app/features/location/presentation/pages/location_search_page.dart';
 import 'package:doctor_booking_app/features/onboard/presentation/pages/onboard_main_page.dart';
 import 'package:doctor_booking_app/features/auth/signup/presentation/pages/signup_page.dart';
 import 'package:doctor_booking_app/features/permissions/presentation/pages/location_permission_page.dart';
@@ -76,6 +77,12 @@ class RouteConfig {
         path: RoutePath.locationPermission,
         name: RouteNames.locationPermission,
         builder: (context, state) => const LocationPermissionPage(),
+      ),
+
+      GoRoute(
+        path: RoutePath.manualLocationSearch,
+        name: RouteNames.manualLocationSearch,
+        builder: (context, state) => const LocationSearchPage(),
       ),
     ],
 

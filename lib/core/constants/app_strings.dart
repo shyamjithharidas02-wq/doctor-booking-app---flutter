@@ -61,4 +61,16 @@ class AppStrings {
   static const createProfleSubTitle =
       "Don't worry, only you can see your personal\ndata. No one else will be able to see it.";
   static const createProfile = "Create Profile";
+
+  // Enable permissions
+  static const enableNotification = "Enable Notification Access";
+  static const enableNotificationSub =
+      "Enable location to discover doctors and\nhospitals around you";
+  static const allowNotificationBtnText = "Allow Notification";
+  static const maybeLaterText = "Maybe Later";
+  static const locationTitle = "What is Your Location?";
+  static const locationSubTitle =
+      "Allow location access to find services near you.";
+  static const locationBtnText = "Allow Location Access";
+  static const locationManually = "Enter Location Manually";
 }
