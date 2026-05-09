@@ -8,5 +8,6 @@ class RouteNames {
   static const patientProfileCreation = "patientprofilecreation";
   static const locationPermission = "locationpermission";
   static const notificationPermission = "notificationpermission";
+  static const manualLocationSearch = "manuallocationsearch";
   static const home = "home";
 }
